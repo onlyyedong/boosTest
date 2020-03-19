@@ -1,0 +1,374 @@
+/* 清除内外边距 */
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, /* structural elements 结构元素 */
+dl, dt, dd, ul, ol, li, /* list elements 列表元素 */
+pre, /* text formatting elements 文本格式元素 */
+fieldset, button, input, textarea, /* form elements 表单元素 */
+th, td { /* table elements 表格元素 */
+    margin: 0;
+    padding: 0;
+}
+
+/* 设置默认字体 */
+body,
+button, input, select, textarea { /* for ie */
+    /*font: 12px/1 Tahoma, Helvetica, Arial, "宋体", sans-serif;*/
+    font-size: 12px;
+    font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", SimSun, "sans-serif";
+}
+
+h1 { font-size: 18px; /* 18px / 12px = 1.5 */ }
+h2 { font-size: 16px; }
+h3 { font-size: 14px; }
+h4, h5, h6 { font-size: 100%; }
+
+address, cite, dfn, em, var { font-style: normal; } /* 将斜体扶正 */
+code, kbd, pre, samp, tt { font-family: "Courier New", Courier, monospace; } /* 统一等宽字体 */
+small { font-size: 12px; } /* 小于 12px 的中文很难阅读，让 small 正常化 */
+
+/* 重置列表元素 */
+ul, ol { list-style: none; }
+
+/* 重置文本格式元素 */
+a { text-decoration: none; -webkit-tap-highlight-color:rgba(255,255,255,0);}
+a:hover { text-decoration: none; }
+
+abbr[title], acronym[title] { /* 注：1.ie6 不支持 abbr; 2.这里用了属性选择符，ie6 下无效果 */
+    border-bottom: 1px dotted;
+    cursor: help;
+}
+
+q:before, q:after { content: ''; }
+
+/* 重置表单元素 */
+legend { color: #000; } /* for ie6 */
+fieldset, img { border: none; } /* img 搭车：让链接里的 img 无边框 */
+/* 注：optgroup 无法扶正 */
+a, button, input, select, textarea {
+    font-size: 100%; /* 使得表单元素在 ie 下能继承字体大小 */
+    outline: none;
+}
+
+
+/* 重置 hr */
+hr {
+    border: none;
+    height: 1px;
+}
+
+/* 让非ie浏览器默认也显示垂直滚动条，防止因滚动条引起的闪烁 */
+
+/* 其他常用样式 */
+.none, .dn {
+    display: none !important;
+}
+.hidden, .vh {
+    visibility: hidden !important;
+}
+.hide {
+    opacity: 0 !important;
+}
+.disabled {
+    cursor             : not-allowed;
+    pointer-events     : none;
+    opacity            : 0.65;
+    filter             : alpha(opacity=65);
+    -webkit-box-shadow : none;
+    box-shadow         : none;
+}
+
+
+/* 以上为基本默认样式 */
+body, html{
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  width: 100%;
+  height: 100%;
+}
+@media screen and (max-width:1077px){
+  #app{
+      width: 1077px;
+  }
+}
+.home_box{
+  width: 100%;
+  height: 100%;
+  background: url(../../assets/images/home_img.png) no-repeat center;
+  overflow: hidden;
+}
+.home_center_border{
+  width: 90%;
+  height: 620px;
+  margin: 60px auto 0;
+  background: #f8f8f8;
+  border-radius: 40px;
+  box-shadow:0px 0px 5px 10px rgba(15, 214, 171, 0.4);
+  overflow: hidden;
+}
+.home_center_left{
+  width: 75%;
+  height: 100%;
+  float: left;
+  background: -webkit-linear-gradient(to right,#ffffff,#f8f8f8); /* Safari 5.1-6.0 */
+  background: -o-linear-gradient(to right,#ffffff,#f8f8f8); /* Opera 11.1-12.0 */ 
+  background: -moz-linear-gradient(to right,#ffffff,#f8f8f8); /* Firefox 3.6-15 */
+  background: linear-gradient(to right,#ffffff,#f8f8f8); /* 标准语法 */
+}
+.home_center_right{
+  width: 25%;
+  height: 100%;
+  float: right;
+  background: #ffffff;
+  border-radius: 40px;
+}
+.home_cleft_box{
+  width: 85%;
+  margin: 0 6% 0 9%;
+  height: 100%;
+  overflow: hidden;
+}
+/* 头部 */
+.home_cleft_title{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin: 40px auto;
+}
+.home_cleft_title .home_cleft_tlog{
+  font-size: 45px;
+}
+.home_cleft_title .home_cleft_ttab{
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  color: #666666;
+}
+.home_cleft_title .active{
+  color: #000;
+}
+.home_cleft_title .home_cleft_text{
+  margin-right: 20px;
+}
+.home_cleft_tserch{
+  width: 200px;
+  height: 30px;
+  background: #f4f4f4;
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+}
+.home_cleft_tserch .input{
+  width: 90%;
+  height: 100%;
+  margin: 0 auto;
+  background: none;
+	outline: none;
+  border: none;
+  display: block;
+}
+.home_cleft_tserch .input::-webkit-input-placeholder{
+  color: #CCCCCC;
+}
+.home_cleft_tserch .home_cleft_ticon{
+  position: absolute;
+  right: 10px;
+  top: 8px;
+  font-size: 15px;
+  color: #999999;
+  font-weight: 700;
+}
+/* 卡片 */
+.home_cleft_card{
+  width: 100%;
+  margin: 20px auto;
+}
+.home_cleft_cardTitle{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.home_cleft_cardH1{
+  font-size: 16px;
+  color: #000;
+  font-weight: 700;
+}
+.home_cleft_cardtext{
+  font-size: 12px;
+  color: #999999;
+}
+.home_cleft_cardList{
+  width: 100%;
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.home_cleft_carLi{
+  width: 200px;
+  height: 120px;
+  background: #f4f4f4;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.home_cleft_carBoxs{
+  width: 85%;
+  height: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.home_cleft_carMany{
+  margin-top: 20px;
+  font-size: 12px;
+  color: #fff;
+}
+.home_cleft_carNumber{
+  color: #999999;
+  font-size: 12px;
+  margin-top: 20px;
+}
+.home_cleft_carName{
+  margin-top: 15px;
+  font-size: 14px;
+  color: #fff;
+  font-weight: 700;
+}
+.home_cleft_carAdd .home_cleft_carAddIco{
+  font-size: 40px;
+  width: 50px;
+  color: #999999;
+  margin: 30px auto 10px;
+}
+.home_cleft_carAddText{
+  text-align: center;
+  font-size: 12px;
+  color: #999999;
+}
+/* 底部 */
+.home_cleft_bottom{
+  width: 100%;
+  overflow: hidden;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.home_cleft_main{
+  width: 30%;
+  float: left;
+  height: 300px;
+}
+.home_cleft_chart{
+  width: 65%;
+  float: right;
+}
+.home_cleft_mainTitle{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.home_cleft_mainServer{
+  font-size: 16px;
+  color: #000;
+  font-weight: 700;
+}
+.home_cleft_view{
+  font-size: 12px;
+  color: #999999;
+}
+.home_cleft_mainList{
+  margin-top: 10px;
+  width: 100%;
+  background-color: #f4f4f4;
+  border-radius: 15px;
+}
+.home_cleft_mainBox{
+  width: 95%;
+  margin: 5px auto;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+.home_cleft_mainLi{
+  width: 45%;
+  margin: 10px 2.5%;
+  border-radius: 10px;
+  background: #ffffff;
+}
+.home_cleft_mainLiIcon{
+  display: block;
+  font-size: 18px!important;
+  width: 20px;
+  margin: 10px auto;
+  color: red;
+}
+.home_cleft_mainLiName{
+  color: #000;
+  font-size: 12px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.home_cleft_chart{
+}
+.home_cleft_curren{
+  width: 100%;
+}
+.home_cleft_currenLine{
+  margin-top: 10px;
+}
+.home_cleft_currenLi{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 10px;
+}
+.home_cleft_currena{
+  width: 25%;
+  color: #999999;
+}
+.home_cleft_currenb{
+  width: 50%;
+  height: 100%;
+  border-bottom: 1px dashed #999999;
+}
+.home_cleft_currenc{
+  width: 25%;
+  color: #000;
+  text-align: right;
+  font-weight: 700;
+}
+.home_cleft_savingsBottom{
+  width: 100%;
+  margin-top: 10px;
+  overflow: hidden;
+}
+.main-box1{
+  float: left;
+}
+.home_cleft_savingsRight{
+  float: right;
+  width: 30%;
+}
+.home_cleft_savingsObj{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+.home_cleft_savingsKey{
+  color: #999999;
+}
+.home_cleft_savingsVaue{
+  color: #000;
+  font-weight: 700;
+}
